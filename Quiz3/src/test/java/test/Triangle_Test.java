@@ -45,53 +45,23 @@ public class Triangle_Test {
 	}
 
 	@Test(expected = TriangleException.class)
-	public void ImaginaryTriangleConstructor() {
-		try {
-			Triangle tri = new Triangle(2, 8, 2);
-		} catch (TriangleException e1) {
-			System.out.println("Caught it! Constructor.");
-			e1.printStackTrace();
-		}
-		fail("Didn't catch the exception!?");
+	public void ImaginaryTriangleConstructor() throws Exception {
+		Triangle tri = new Triangle(2, 8, 2);
+	}
+
+	@Test(expected = TriangleException.class)
+	public void ImaginaryTriangleArea() throws Exception {
+		Triangle tri = new Triangle(2, 3, 2);
+		tri.setSide1(80);
+		tri.getArea();
 
 	}
 
 	@Test(expected = TriangleException.class)
-	public void ImaginaryTriangleArea() {
-		Triangle tri = new Triangle();
-		try {
-			 tri = new Triangle(2, 3, 2);
-		} catch (TriangleException e1) {
-			System.out.println("Oh?? Wasn't expecting catch.");
-			e1.printStackTrace();
-		}
-		tri.setSide1(80);
-		try {
-			tri.getArea();
-		} catch (TriangleException e) {
-			System.out.println("Caught it! Area.");
-			e.printStackTrace();
-		}
-		fail("Didn't catch the exception!?");
-	}
+	public void ImaginaryTrianglePeri() throws Exception {
 
-	@Test(expected = TriangleException.class)
-	public void ImaginaryTrianglePeri() {
-
-		Triangle tri = new Triangle();
-		try {
-			tri = new Triangle(2, 3, 2);
-		} catch (TriangleException e1) {
-			System.out.println("Oh?? Wasn't expecting catch.");
-			e1.printStackTrace();
-		}
+		Triangle tri = new Triangle(2, 3, 2);
 		tri.setSide1(80);
-		try {
-			tri.getPerimeter();
-		} catch (TriangleException e) {
-			System.out.println("Caught it! Perimeter.");
-			e.printStackTrace();
-		}
-		fail("Didn't catch the exception!?");
+		tri.getPerimeter();
 	}
 }
