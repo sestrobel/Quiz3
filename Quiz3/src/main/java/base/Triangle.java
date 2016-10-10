@@ -86,6 +86,7 @@ public class Triangle extends GeometricObject {
 	 * Returns information about the triangle: the lengths of the sides, the
 	 * color, area, perimeter, and whether or not it is filled.
 	 */
+	@Override
 	public String toString() {
 		if (this.isFilled())
 			try {

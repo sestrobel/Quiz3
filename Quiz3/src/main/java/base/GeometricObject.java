@@ -46,6 +46,9 @@ public abstract class GeometricObject {
 		return dateCreated;
 	}
 
+	/**
+	 * toString, shows date created, color, and whether it's filled. 
+	 * 	 */
 	@Override
 	public String toString() {
 		return "created on " + dateCreated + "\ncolor: " + color + " and filled: " + filled;

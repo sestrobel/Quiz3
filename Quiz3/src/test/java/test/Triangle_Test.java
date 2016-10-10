@@ -43,6 +43,20 @@ public class Triangle_Test {
 			e.printStackTrace();
 		}
 	}
+	
+	@Test
+	public void RealTriangleToString() {
+		Triangle tri = new Triangle();
+		try {
+			tri = new Triangle(3, 4, 5);
+		} catch (TriangleException e1) {
+			System.out.println("Oh?? Wasn't expecting catch.");
+			e1.printStackTrace();
+		}
+		String s = tri.toString();
+		String exp = "The length of the sides are 3.0, 4.0, and 5.0. The color is white. It is not filled. The area is 6.0, the perimeter is 12.0";
+		assertTrue(s.equals(exp));
+	}
 
 	@Test(expected = TriangleException.class)
 	public void ImaginaryTriangleConstructor() throws Exception {
@@ -54,14 +68,27 @@ public class Triangle_Test {
 		Triangle tri = new Triangle(2, 3, 2);
 		tri.setSide1(80);
 		tri.getArea();
-
 	}
 
 	@Test(expected = TriangleException.class)
 	public void ImaginaryTrianglePeri() throws Exception {
-
 		Triangle tri = new Triangle(2, 3, 2);
 		tri.setSide1(80);
 		tri.getPerimeter();
+	}
+	
+	@Test
+	public void ImaginaryTriangleToString() {
+		Triangle tri = new Triangle();
+		try {
+			tri = new Triangle(3, 4, 5);
+		} catch (TriangleException e1) {
+			System.out.println("Oh?? Wasn't expecting catch.");
+			e1.printStackTrace();
+		}
+		tri.setSide1(50);
+		String s = tri.toString();
+		String exp = "Your triangle isn't real!";
+		assertTrue(s.equals(exp));
 	}
 }
