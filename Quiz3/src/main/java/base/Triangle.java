@@ -72,10 +72,20 @@ public class Triangle extends GeometricObject {
 	
 	/** Returns information about the triangle: the lengths of the sides, the color, and whether or not it is filled. */
 	public String toString(){
-		if (this.isFilled()) 
-			return("The length of the sides are " +  side1 +", "+ side2+", and "+ side3 + ". The color is " + getColor() + ". It is filled.");
+		if (this.isFilled())
+			try {
+				return("The length of the sides are " +  side1 +", "+ side2+", and "+ side3 + ". The color is " + getColor() + ". It is filled. The area is " + getArea() + ", the perimeter is " + getPerimeter());
+			} catch (TriangleException e) {
+				e.printStackTrace();
+				return("Your triangle isn't real!");
+			}
 		else 
-			return("The length of the sides are " + side1+", "+ side2+", and "+ side3 + ". The color is " + getColor() + ". It is not filled.");
+			try {
+				return("The length of the sides are " +  side1 +", "+ side2+", and "+ side3 + ". The color is " + getColor() + ". It is not filled. The area is " + getArea() + ", the perimeter is " + getPerimeter());
+			} catch (TriangleException e) {
+				e.printStackTrace();
+				return("Your triangle isn't real!");
+			}
 	}
 
 
