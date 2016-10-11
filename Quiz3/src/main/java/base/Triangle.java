@@ -28,29 +28,14 @@ public class Triangle extends GeometricObject {
 		return side1;
 	}
 
-	/** Sets value of side1 attribute */
-	public void setSide1(double side1) {
-		this.side1 = side1;
-	}
-
 	/** Returns value of side2 attribute */
 	public double getSide2() {
 		return side2;
 	}
 
-	/** Sets value of side1 attribute */
-	public void setSide2(double side2) {
-		this.side2 = side2;
-	}
-
 	/** Returns value of side3 attribute */
 	public double getSide3() {
 		return side3;
-	}
-
-	/** Sets value of side1 attribute */
-	public void setSide3(double side3) {
-		this.side3 = side3;
 	}
 
 	/**
